@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Beachcomber spec - Test</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    <h1>Beachcomber test</h1>
+    <form method="post" action="/test" enctype="multipart/form-data">
+        {% for question in questions %}
+        <p>{{ question[1] }}</p>
+        <input type="radio" name="q{{ question[0] }}" value="1">{{ question[2] }}<br>
+        <input type="radio" name="q{{ question[0] }}" value="2">{{ question[3] }}<br>
+        <input type="radio" name="q{{ question[0] }}" value="3">{{ question[4] }}<br>
+        <input type="radio" name="q{{ question[0] }}" value="4">{{ question[5] }}<br>
+        {% endfor %}
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
